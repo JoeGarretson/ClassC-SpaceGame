@@ -1,0 +1,94 @@
+#include <stdio.h>
+#include <stdlib.h>  
+#include <stdbool.h>
+#include <math.h>
+#include <time.h>
+
+//__________________________________ Variables
+
+    int milesTraveled = 0;
+    
+    int tiredness = 0;
+    int drinks = 5;
+    int alienMiles = -20;
+//__________________________________ 
+
+    int lower;
+    int upper;
+    int numRand;
+    int newNUM;
+//__________________________________
+    
+void numRandoms(int lower, int upper, int numRand){ //Random number between range function
+    { 
+        numRand = (rand() % (upper - lower + 1)) + lower; 
+        printf("%d\n", numRand); 
+    } 
+} 
+
+//___________________________________ 
+
+int main()
+{
+    srand(time(0));
+    
+    int thirst = 0;
+    
+    int choice;
+    //bool done = false;
+    printf("Welcome to Cringus Ship Run!\nYou have stolen a Cringus (a mountable alien creature) to escape the planet Xarzee.\nThe Xarzeeins want to contain you once more and are chasing you!\nOutrun the Xarzeeins to win!\n");
+    
+    while (choice < 6 ){
+        printf("\n1. Drink your space juice \n2. Ahead moderate speed \n3. Ahead full speed \n4. Stop for the night \n5. Status check \n6. Quit \n");
+        printf("\nEnter your choice \n");
+
+        scanf("%d" , &choice);
+        
+        if (choice == 1){ //Drink
+            printf("You chose: %d\n", choice);
+        }
+        
+        else if (choice == 2){ //Ahead moderate speed
+            printf("You chose: %d\n", choice);
+            printf("You traveled __ miles"); //need miles
+            ++thirst;
+            tiredness = +1;
+            printf("thirst:%d", thirst);
+            // aliens up 7-14 miles
+        }
+        
+        else if (choice == 3){ //Ahead full speed
+            printf("You chose: %d\n", choice);
+            printf("You traveled __ miles");
+            
+            
+        }
+        
+        else if (choice == 4){ //Stop for the night
+            printf("You chose: %d\n", choice);
+            tiredness = 0;
+            printf("The Cringus is well rested.\n");
+            int lower = 7, upper = 14;
+            numRandoms(lower, upper, numRand);
+            printf("%d", numRand); // aliens up 7-14 miles
+        }
+        
+        else if (choice == 5){ //Status check
+            printf("You chose: %d\n", choice);
+            printf("Miles traveled: %d\n", milesTraveled);
+            printf("Space juice remaining: %d\n", drinks);
+            printf("The aliens are %d miles behind you\n", alienMiles);
+        }
+        
+        else if (choice == 6){ //Quit
+            printf("You chose: %d\n", choice);
+        }
+    
+    }
+    
+    return 0;
+}
+
+
+
+
